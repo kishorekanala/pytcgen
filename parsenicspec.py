@@ -25,13 +25,3 @@ def extract_features(data):
         elif isinstance(value, list):
             subfeatures[key].extend(value)
     return features, subfeatures
-
-file_path = '/Users/kishore/myprojects/pytcgen/intelE810features.json'
-specfeatures, spec_subfeatures = parse_intel_e810_features(file_path)
-print("Features:")
-print(specfeatures)
-print("\nSubfeatures:")
-for feature, subfeature_list in spec_subfeatures.items():
-    print(f"{feature}:")
-    for subfeature in subfeature_list:
-        print(f"  - {subfeature}")
