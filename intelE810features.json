@@ -1,0 +1,124 @@
+{
+  "Host Interface": [
+    "Compliance with PCIe 4.0",
+    "Concurrency for 256 non-posted requests"
+  ],
+  "Software Interface": {
+    "Base mode VF compatibility with Intel Adaptive Virtual Functions Specification": true,
+    "Tx/Rx Queues": {
+      "Tx queues": 2048,
+      "Rx queues": 2048,
+      "Dynamic allocation of queues to functions and VSIs": true
+    },
+    "Interrupts": {
+      "Interrupt vectors": 2048,
+      "Flexible allocation to queues and other causes": true,
+      "Multiple interrupt moderation schemes": true,
+      "Interrupts per second": 20000000
+    },
+    "Control Queues": {
+      "Mailbox Queues for PF-VF and driver-driver": true,
+      "Admin Queues for Software-Firmware control flows": true,
+      "Sideband Queues for Software to access IPs inside the E810": true
+    },
+    "Tx Doorbell Queues": 256,
+    "Tx Completion Queues": 512,
+    "Quanta Descriptor Queue per Tx queue": true,
+    "Programmable Rx descriptor fields": true
+  },
+  "Packet Processing": {
+    "Enhanced Data Plane Development Kit (DPDK)": true,
+    "General": {
+      "Stages": [
+        "parsing",
+        "switching",
+        "ACLs",
+        "classification",
+        "packet modification"
+      ],
+      "Programmable packet processing pipeline": true,
+      "Profile based": true,
+      "Programmable actions": true,
+      "Propagation of priorities between stages": true
+    },
+    "Parser": {
+      "Parses up to 504B from packet header": true,
+      "Parse Graph based": true,
+      "Session-based parsing": true,
+      "Programmable parse engine": true
+    },
+    "Binary Classifier (VEB Switch)": {
+      "Switch ports (VSIs)": 768,
+      "Programmable forwarding rules": true,
+      "Storm Control": true
+    },
+    "ACLs": {
+      "Programmable TCAM entries": 8000,
+      "Tiling capability to n*40b width": true
+    },
+    "Classification Filters": {
+      "Hash-based statistical distribution": true,
+      "Intel Ethernet Flow Director (Intel Ethernet FD) flow-based classification": true,
+      "Flow-based identification of iWARP and RoCE flows": true,
+      "Programmable rules": true
+    },
+    "Modifier": {
+      "Insert (Tx), remove (Rx), and modify of packet VLANs": true,
+      "L3 and L4 checksums and CRC": true
+    }
+  },
+  "Virtualization": {
+    "Host virtualization via VMDQ and SR-IOV": true,
+    "SR-IOV Virtual Functions": 256,
+    "Stateless offloads for tunneled packets (network virtualization support)": true,
+    "Malicious VF protection": true,
+    "Virtual machine load balancing (VMLB)": true,
+    "Advanced packet filtering": true,
+    "VLAN support with VLAN tag insertion, stripping and packet filtering for up to 4096 VLAN tags": true,
+    "VxLAN, GENEVE, NVGRE, MPLS, VxLAN-GPE with Network Service Headers (NSH)": true,
+    "Intel Ethernet Adaptive Virtual Function drivers": true
+  },
+  "RDMA": {
+    "iWARP and RoCEv2": true,
+    "Queue Pairs (QPs)": 256000,
+    "Send Queue Push Mode": true,
+    "Note": "RDMA is not supported when the E810 is configured for >4-port operation."
+  },
+  "QoS": {
+    "WFQ Transmit scheduler with nine programmable layers": true,
+    "Pipeline sharing and starvation avoidance": true,
+    "QoS via 802.1p PCP or Differentiated Services Code Point (DSCP) value": true,
+    "Packet shaping": true
+  },
+  "Manageability": {
+    "SMBus operating at up to 1Mb/s": true,
+    "DMTF-compliant NC-SI 1.1 Interface at 100Mb/s": true,
+    "MCTP over PCIe and SMBus": true,
+    "Enterprise-level management schemes via local BMC": true,
+    "SNMP and RMON statistic counters": true,
+    "Watchdog timer": true,
+    "PLDM over MCTP": true,
+    "PLDM Monitoring": true,
+    "PLDM firmware update": true,
+    "PLDM for RDE": true,
+    "Firmware Management Protocol support": true
+  },
+  "Power Management": {
+    "Supports PCI power management states D0, D3hot, D3cold": true
+  },
+  "Time Synchronization": {
+    "Time stamp with each Rx packet": true,
+    "Selective time stamps for Tx packets": true,
+    "IEEE 1588 PTP v1 and v2 support": true,
+    "Time synchronization signaling with other local platform ingredients": true
+  },
+  "Pre-Boot": {
+    "Signed UEFI option ROM compatible with HTTPS boot": true
+  },
+  "Security": {
+    "Hardware-based Root of Trust": true,
+    "Authentication on NVM Read and Power On": true,
+    "Built-in detection of firmware/critical setting corruption with automated device recovery": true
+  },
+  "Ethernet Port Configuration Tool (EPCT)": true
+}
