@@ -17,7 +17,7 @@ def get_list_of_features_subfeatures(file_path):
 def create_prompt(feature, subfeature):
     subfeatures_str = ", ".join(subfeature)
     return (
-        "Generate test cases with test case number, test case subfeature, "
+        "Generate test cases in tabular form with test case number, test case subfeature, "
         "test case description, expected result, pre-requisite for "
         f"{feature} considering {subfeatures_str} subfeatures"
     )
