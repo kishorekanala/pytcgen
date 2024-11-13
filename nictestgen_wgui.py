@@ -5,6 +5,7 @@ import google.generativeai as genai
 from parsenicspec import parse_intel_e810_features
 import glob
 import os
+import pypandoc
 
 class TestCaseGeneratorApp:
     API_KEY = "AIzaSyA8XFi_pV8qnqeJ3ohU8sVlsnv56A94l84"
@@ -13,17 +14,21 @@ class TestCaseGeneratorApp:
         self.root = root
         self.root.title("Test Case Generator")
 
-        self.label = tk.Label(root, text="Enter the specification file")
-        self.label.pack(pady=10)
+        self.label_frame = tk.Frame(root)
+        self.label_frame.pack(pady=10)
 
-        self.entry = tk.Entry(root, width=50)
-        self.entry.pack(pady=10)
+        self.label = tk.Label(self.label_frame, text="Enter the specification file")
+        self.label.pack(side=tk.LEFT)
+
+        self.entry = tk.Entry(self.label_frame, width=50)
+        self.entry.pack(side=tk.RIGHT)
 
         self.submit_button = tk.Button(root, text="Submit", command=self.submit)
         self.submit_button.pack(pady=10)
 
         self.clean_button = tk.Button(root, text="Clean", font=("Helvetica", 8), command=self.clean_output_directory)
         self.clean_button.pack(pady=10)
+        self.clean_button.place(relx=1.0, rely=1.0, anchor='se')
 
         self.progress_label = tk.Label(root, text="")
         self.progress_label.pack(pady=10)
@@ -54,8 +59,11 @@ class TestCaseGeneratorApp:
     def create_prompt(self, feature, subfeature):
         subfeatures_str = ", ".join(subfeature)
         return (
-            "Generate test cases in tabular form with test case number, test case subfeature, "
-            "test case description, expected result, pre-requisite for "
+            #"Generate test cases in tabular form with test case number, test case subfeature, "
+            #"test case description, expected result, pre-requisite for "
+            #f"{feature} considering {subfeatures_str} subfeatures"
+            "Generate test cases with test case number, test case subfeature, as headings "
+            "test case description, expected result, pre-requisite as tables for "
             f"{feature} considering {subfeatures_str} subfeatures"
         )
 
@@ -82,12 +90,18 @@ class TestCaseGeneratorApp:
         response = self.model.generate_content(self.create_prompt(feature, subfeature_list))
         with open(f"./outtcdir/{feature}_test_cases.md", "w") as file:
             file.write(response.text)
+        output_path = f"./outtcdir/{feature}_test_cases.docx"
+        pypandoc.convert_file(f"./outtcdir/{feature}_test_cases.md", 'docx', outputfile=output_path)
+        self.progress_label.config(text=f"Test cases for feature: {feature} generated.")
         self.current_feature_index += 1
         self.process_next_feature()
 
     def clean_output_directory(self):
         md_files = glob.glob('./outtcdir/*.md')
         for file in md_files:
+            os.remove(file)
+        docx_files = glob.glob('./outtcdir/*.docx')
+        for file in docx_files:
             os.remove(file)
         self.progress_label.config(text="Output directory cleaned.")
         self.root.update_idletasks()
