@@ -1,0 +1,121 @@
+{
+    "Host Interface": {
+        "Compliance": "PCIe 4.0",
+        "Concurrency": "256 non-posted requests"
+    },
+    "Software Interface": {
+        "Base mode VF compatibility": "Intel® Adaptive Virtual Functions Specification",
+        "Tx/Rx Queues": {
+            "Tx queues": 2048,
+            "Rx queues": 2048,
+            "Dynamic allocation": "queues to functions and VSIs"
+        },
+        "Interrupts": {
+            "Interrupt vectors": 2048,
+            "Allocation": "flexible manner to queues and other causes",
+            "Moderation schemes": "Multiple",
+            "Rate": "20M interrupts/sec"
+        },
+        "Control Queues": {
+            "Mailbox Queues": "PF-VF and driver-driver",
+            "Admin Queues": "Software-Firmware control flows",
+            "Sideband Queues": "Software to access IPs inside the E810"
+        },
+        "Tx Doorbell Queues": 256,
+        "Tx Completion Queues": 512,
+        "Quanta Descriptor Queue": "per Tx queue. Quanta information is also embedded in the Tx doorbell",
+        "Programmable Rx descriptor fields": true
+    },
+    "Packet Processing": {
+        "Enhanced Data Plane Development Kit (DPDK)": true,
+        "General": {
+            "Stages": ["parsing", "switching", "ACLs", "classification", "packet modification"],
+            "Pipeline": "Programmable packet processing",
+            "Profile based": true,
+            "Actions": "Programmable",
+            "Priority propagation": "between stages"
+        },
+        "Parser": {
+            "Packet header size": "up to 504B",
+            "Parse Graph based": true,
+            "Session-based parsing": true,
+            "Engine": "Programmable parse engine"
+        },
+        "Binary Classifier (VEB Switch)": {
+            "Switch ports": 768,
+            "Forwarding rules": "Programmable",
+            "Storm Control": true
+        },
+        "ACLs": {
+            "TCAM entries": 8000,
+            "Tiling capability": "n*40b width"
+        },
+        "Classification Filters": {
+            "Distribution": "Hash-based statistical",
+            "Intel® Ethernet Flow Director": "flow-based classification",
+            "Flow identification": ["iWARP", "RoCE flows"],
+            "Rules": "Programmable"
+        },
+        "Modifier": {
+            "VLANs": ["Insert (Tx)", "remove (Rx)", "modify"],
+            "Checksums": ["L3", "L4"],
+            "CRC": true
+        }
+    },
+    "Virtualization": {
+        "Host virtualization": ["VMDQ", "SR-IOV"],
+        "SR-IOV Virtual Functions": 256,
+        "Stateless offloads": "for tunneled packets (network virtualization support)",
+        "Malicious VF protection": true,
+        "Virtual machine load balancing (VMLB)": true,
+        "Advanced packet filtering": true,
+        "VLAN support": {
+            "VLAN tag insertion": true,
+            "stripping": true,
+            "packet filtering": "up to 4096 VLAN tags"
+        },
+        "Tunneling protocols": ["VxLAN", "GENEVE", "NVGRE", "MPLS", "VxLAN-GPE with Network Service Headers (NSH)"],
+        "Intel® Ethernet Adaptive Virtual Function drivers": true
+    },
+    "RDMA": {
+        "Protocols": ["iWARP", "RoCEv2"],
+        "Queue Pairs (QPs)": 256000,
+        "Send Queue Push Mode": true,
+        "Note": "RDMA is not supported when the E810 is configured for >4-port operation."
+    },
+    "QoS": {
+        "WFQ Transmit scheduler": "nine programmable layers",
+        "Pipeline sharing": true,
+        "Starvation avoidance": true,
+        "QoS": ["802.1p PCP", "Differentiated Services Code Point (DSCP) value"],
+        "Packet shaping": true
+    },
+    "Manageability": {
+        "SMBus": "up to 1Mb/s",
+        "NC-SI Interface": "DMTF-compliant NC-SI 1.1 Interface at 100Mb/s",
+        "MCTP": ["PCIe", "SMBus"],
+        "Enterprise-level management": "via local BMC",
+        "Statistics": ["SNMP", "RMON statistic counters"],
+        "Watchdog timer": true,
+        "PLDM": ["PLDM over MCTP", "PLDM Monitoring", "PLDM firmware update", "PLDM for RDE"],
+        "Firmware Management Protocol support": true
+    },
+    "Power Management": {
+        "PCI power management states": ["D0", "D3hot", "D3cold"]
+    },
+    "Time Synchronization": {
+        "Rx packet time stamp": true,
+        "Tx packet selective time stamps": true,
+        "IEEE 1588 PTP": ["v1", "v2"],
+        "Time synchronization signaling": "with other local platform ingredients"
+    },
+    "Pre-Boot": {
+        "UEFI option ROM": "Signed, compatible with HTTPS boot"
+    },
+    "Security": {
+        "Root of Trust": "Hardware-based",
+        "Authentication": ["NVM Read", "Power On"],
+        "Firmware/critical setting corruption detection": "Built-in with automated device recovery"
+    },
+    "Ethernet Port Configuration Tool (EPCT)": true
+}

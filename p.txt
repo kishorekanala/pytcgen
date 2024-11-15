@@ -1,0 +1,366 @@
+Key Features
+• Single and Dual-Port QSFP28 • Application Device Queues (ADQ) 
+• PCI Express (PCIe) 4.0 x16 • Dynamic Device Personalization (DDP) 
+• Ethernet Port Configuration T ool (EPCT) • Supports both RDMA iWARP and RoCEv2 Efficient workload-optimized performance at Ethernet speeds of 10 to 100GbpsIntel® Ethernet Network Adapter 
+E810-CQDA1/CQDA2
+Performance for Cloud Applications
+Delivers the bandwidth and increased application 
+throughput required for demanding cloud workloads  
+including edge services, web servers, database  
+applications, caching servers, and storage targets.
+• Application Device Queues (ADQ) improves  
+application response time predictability using  
+advanced traffic-steering technology
+• Dynamic Device Personalization (DDP) enhances  
+packet classification capabilities, to deliver up to 3x 
+throughput improvement¹ for some cloud workloads
+• Supports both RDMA iWARP and RoCEv2 for  
+high-speed, low-latency connectivity to storage targetsOptimizations for Communications Workloads  
+Provides packet classification and sorting  
+optimizations for high-bandwidth network and  
+communications workloads, including mobile core,  
+5G RAN, and network appliances.
+• Dynamic Device Personalization (DDP) supports  
+existing and new communications-specific protocols  
+improving packet-processing efficiency up to 3x  
+for some Network Functions Virtualization (NFV)  
+workloads
+• IEEE 1588 Precision Time Protocol (PTP) v2  
+enables precise clock synchronization across the  
+5G RAN deployments
+• Enhanced Data Plane Development Kit (DPDK)  
+support increases packet-processing speedsImprove application efficiency and network performance with innovative and versatile capabilities that optimize  
+high-performance server workloads such as NFV, storage, HPC-AI and hybrid cloud.  
+Versatile Port Configurations with EPCT
+E810-CQDA1 and -CQDA2 adapters support a wide range of system configurations to meet customer needs 
+and workload requirements. The many port and speed combinations available simplify validation and  
+deployment. Using EPCT, these adapters can be programmed to act as many different physical network  
+adapters, with a maximum throughput of 100Gbps.
+Connect to a wide range of 
+switch speeds and media types2x100Gb
+1x100Gb
+2x50Gb
+4x25Gb
+4x25Gb
+2x2x25Gb
+8x10Gb
+E810-CQDA1
+E810-CQDA2
+Product Brief
+Intel® Ethernet 800 Series Network Adapters
+Greater Predictability at Scale  
+As modern data centers scale, a key challenge is 
+to provide scalable, predictable application-level 
+performance. Application Device Queues (ADQ) 
+technology improves performance scalability and 
+predictability by dedicating queues to key workloads, 
+delivering predictable high performance through 
+dramatically reduced jitter.
+Increasing the predictability of application response 
+times by lowering jitter enables more compute 
+servers to be assigned to a task and can allow more 
+users to access the system, providing a better  
+end-user experience. Even applications that are not 
+large scale can benefit from higher consistency, 
+enabling them to meet service-level agreements 
+(SLAs) more easily.
+ADQ enables application-specific data steering, 
+signaling, and rate limiting using an optimized 
+application thread to device data path. This ability 
+to dedicate queues and shape network traffic not 
+only increases performance, it reduces latency and 
+improves throughput.
+Increase Throughput and Lower Latency
+Remote Direct Memory Access (RDMA) provides 
+high throughput and low-latency performance 
+for modern high-speed Ethernet by eliminating 
+three major sources of networking overhead: TCP/
+IP stack process, memory copies, and application 
+context switches. Intel Ethernet 800 Series Network 
+Adapters support all Ethernet-based storage 
+transport, including iWARP , RoCEv2, and NVMe  
+over Fabric.
+RoCE (RDMA over Converged Ethernet): RoCEv2 
+substitutes the InfiniBand physical layer and data link 
+layer with Ethernet, operates on top of UDP/IP, and is 
+routable over IP networks.
+iWARP, IETF standard protocols based: Delivers  
+RDMA on top of the pervasive TCP/IP protocol. 
+iWARP RDMA runs over standard network and 
+transport layers and works with all Ethernet network 
+infrastructure. TCP provides flow control and 
+congestion management and does not require a 
+lossless Ethernet network. iWARP is a highly routable 
+and scalable RDMA implementation.
+Improve Packet Processing Efficiency
+Dynamic Device Personalization (DDP) customizable 
+packet filtering, along with enhanced DPDK, supports 
+advanced packet forwarding and highly-efficient 
+packet processing for both Cloud and NFV workloads.The 800 Series firmware loads an enhanced DDP 
+profile with many workload-specific protocols at 
+driver initialization for greater flexibility. When 
+multiple 800 Series adapters are present in a system, 
+the pipeline on each adapter can be programmed 
+independently with a different DDP profile.
+Increase Timing Accuracy  
+Intel Ethernet 800 Series supports both IEEE  
+1588 PTP v1 and v2 with two-step option. The 
+products provide increased accuracy at single-digit 
+nanosecond level, and can report the reception  
+time for every packet. This level of timing accuracy 
+can help ensure tight synchronization across  
+network deployments ranging from 5G RAN  
+to financial services, industrial automation, and 
+energy monitoring.
+Protect, Detect, and Recover
+Zero T rust is a security design strategy centered on 
+the belief that organizations, by default, should not 
+automatically trust any request for system access. 
+This includes requests coming from outside, as  
+well as inside its perimeters. Zero T rust demands  
+that every access request be verified before  
+granting access.
+The 800 Series implements a design philosophy of 
+platform resiliency with 3 attributes compliant with 
+the NIST Cybersecurity Framework, including NIST 
+800-193 Platform Firmware Resiliency Guidelines: 
+Protect, Detect and Recover. By design, the Hardware 
+Root of T rust in the 800 Series protects the firmware 
+and critical device settings with authentication for 
+every access. Signed firmware updates and the 
+Hardware Root of T rust protects and verifies critical 
+device settings with built-in corruption detection and 
+automated device recovery. T ogether these features 
+ensure the device safely returns to its originally 
+programmed state.  All 800 Series products include these technologies
+For more information about  
+Intel® Ethernet T echnologies, 
+including videos and resource 
+libraries, visit intel.com/ethernet  
+22Intel® Ethernet 800 Series Network Adapters are  
+designed with Intel® Ethernet Controller E810 and  
+include these features².
+Host Interface
+• Compliance with PCIe 4.0
+• Concurrency for 256 non-posted requests
+Software Interface
+• Base mode VF compatibility with  Intel®  
+Adaptive Virtual Functions Specification
+• T x/Rx Queues
+ -2048 Tx queues and 2048 Rx queues
+ -Dynamic allocation of queues to  
+functions and VSIs
+• Interrupts
+ -2048 interrupts vectors, allocated in  
+a flexible manner to queues and  
+other causes
+ -Multiple interrupt moderation schemes
+ -20M interrupts/sec
+• Control Queues (a.k.a. Admin Queues)
+ -Mailbox Queues for PF-VF and  
+driver-driver
+ -Admin Queues for Software-Firmware 
+control flows
+ -Sideband Queues for Software to access 
+IPs inside the E810
+• 256 Tx Doorbell (DB) Queues
+• 512 Tx Completion Queues
+• Quanta Descriptor (QD) Queue per Tx 
+queue. Quanta information is also  
+embedded in the T x doorbell
+• Programmable Rx descriptor fields
+Packet Processing
+• Enhanced Data Plane Development Kit 
+(DPDK)
+• General
+ -Stages of parsing, switching, ACLs,  
+classification, packet modification
+ -Programmable packet processing 
+pipeline
+ -Profile based
+ -Programmable actions
+ -Propagation of priorities between stages
+• Parser
+ -Parses up to 504B from packet header
+ -Parse Graph based
+ -Session-based parsing
+ -Programmable parse engine
+• Binary Classifier (VEB Switch)
+ -768 switch ports (VSIs)
+ -Programmable forwarding rules
+ -Storm Control• ACLs
+ -8K programmable TCAM entries
+ -Tiling capability to n*40b width
+• Classification Filters
+ -Hash-based statistical distribution
+ -Intel® Ethernet Flow Director (Intel®  
+Ethernet FD) flow-based classification
+ -Flow-based identification of iWARP and 
+RoCE flows
+ -Programmable rules
+• Modifier
+ -Insert (Tx), remove (Rx), and modify of 
+packet VLANs
+ -L3 and L4 checksums and CRC
+Virtualization
+• Host virtualization via VMDQ and SR-IOV
+• Up to 256 SR-IOV Virtual Functions
+• Stateless offloads for tunneled packets  
+(network virtualization support)
+• Malicious VF protection
+• Virtual machine load balancing (VMLB)
+• Advanced packet filtering
+• VLAN support with VLAN tag insertion,  
+stripping and packet filtering for up to 4096 
+VLAN tags
+• VxLAN, GENEVE, NVGRE, MPLS, VxLAN-
+GPE with Network Service Headers (NSH)
+• Intel® Ethernet Adaptive Virtual  
+Function drivers
+RDMA
+• iWARP and RoCEv2
+• 256K Queue Pairs (QPs)
+• Send Queue Push Mode
+Note : RDMA is not supported when the E810 
+is configured for >4-port operation.
+QoS
+• WFQ Transmit scheduler with nine  
+programmable layers
+• Pipeline sharing and starvation avoidance
+• QoS via 802.1p PCP or Differentiated  
+Services Code Point (DSCP) value
+• Packet shaping
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Manageability
+• SMBus operating at up to 1Mb/s
+• DMTF-compliant NC-SI 1.1 Interface at  
+100Mb/s
+• MCTP over PCIe and SMBus
+• Enterprise-level management schemes via 
+local BMC
+• SNMP and RMON statistic counters
+• Watchdog timer
+• PLDM over MCTP; PLDM Monitoring; 
+PLDM firmware update; PLDM for RDE
+• Firmware Management Protocol support
+Power Management
+• Supports PCI power management states 
+D0, D3hot, D3cold
+Time Synchronization
+• Time stamp with each Rx packet
+• Selective time stamps for Tx packets
+• IEEE 1588 PTP v1 and v2 support
+• Time synchronization signaling with other 
+local platform ingredients
+Pre-Boot
+• Signed UEFI option ROM compatible with  
+HTTPS boot
+Security
+• Hardware-based Root of Trust
+• Authentication on NVM Read and Power On
+• Built-in detection of firmware/critical setting 
+corruption with automated device recovery
+Ethernet Port Configuration Tool (EPCT)
+• Available for all 100Gb Intel® Ethernet 800 
+Series Network Adapters
+• Offers system configuration options for 
+high-density, port-constrained network 
+environments
+ -Up to six configurations to choose from
+ -Validate once, reconfigure as often  
+as needed
+• Watch the video , or see the infographic
+3Supported Physical Layer Interfaces 
+100Gbps 50Gbps 25Gbps 10Gbps
+DACs IEEE 100GBASE-CR2
+100GBASE-CR4IEEE 50GBASE-CR
+25G/50G Consortium 50GBASE-CR225GBASE-CR (CA-N, CA-S, CA-L) SFP+ 10GbE DAC 
+Optics and AOCs CAUI-4
+100GAUI-2
+100GAUI-4
+100Gb-SR/SR4/LR/LR4IEEE 50GAUI-1
+IEEE 50GAUI-2
+IEEE LAUI-225GBASE-SR/LR 10GBASE-SR/LRAdapter Features
+Data Rate Supported 100/50/25/10GbE Per Port
+Bus Type/Bus Width PCIe 4.0 x16
+Hardware Certifications BSMI, CE, CMIM, FCC, ICES, KCC, RCM, UKCA, 
+cURus, and VCCI
+BMSI RoHS and  
+RoHS-compliant Product is compliant with T aiwan Bureau of  
+Standards, Metrology and Inspection (BMSI), 
+and EU RoHS Directive 2 2011/65/EU (Directive 
+2011/65/EU) and its amendments  
+(e.g. 2015/863/EU)
+Controller Intel® Ethernet Controller E810-CAM1 (Single Port) 
+Intel® Ethernet Controller E810-CAM2 (Dual Port)
+Bracket Full-height bracket installed  
+Low-profile bracket included in package
+Dimension 167 mm x 69 mm
+Power Consumption
+Single Port Single Port Dual Port Dual Port
+ DACs Typical Power Max Power Typical Power Max Power
+100GbE Max 13.9 W 16.6 W 16.9 W 19.2 W
+Idle (no traffic) 12.5 W 14.9 W 15.4 W 17.3 W
+Optics 
+100GbE Max 15.6 W 20.6 W 20.8 W 27.13 W
+Idle (no traffic) 14.3 W 18.9 W 19.3 W 25.43 W
+QSFP28 Max Power Per Port* 4.5 W 3.5 W
+*The max power per port is not an additional power requirement, it is included in the optics maximum power figures listed in the Power Consumption table.Product Order Code
+Configuration Product Code
+Single  Port E810CQDA1, E810CQDA1BLK
+Dual Port E810CQDA2, E810CQDA2BLK
+Technical Specifications
+Airflow Commercial T emp DAC
+Dual Port 100 LFM @ 25 °C ambient
+Dual Port 200 LFM @ 45 °C ambient  
+Dual Port 350 LFM @ 55 °C ambientCommercial Temp Optics (3.5 W)
+Dual Port 200 LFM @ 25 °C ambient
+Dual Port 250 LFM @ 35 °C ambient  
+Dual Port 500 LFM @ 45 °C ambientExtended Temp* Optics (3.5 W)
+Dual Port 100 LFM @ 25 °C ambient  
+Dual Port 250 LFM @ 45 °C ambient  
+Dual Port 400 LFM @ 55 °C ambient
+*85 °C max case
+Storage Humidity Maximum: 90% non-condensing relative humidity at 35 °C 
+Storage T emperature -40 °C to 70 °C (-40 °F to 158 °F)
+Operating T emperature -5 °C to 55 °C (23 °F to 131 °F)
+LED Indicators ACTIVITY (blinking) NO ACTIVITY (off) LINK SPEED (green = 100GbE; amber = less than 100GbE; off = no link)
+Supported Operating Systems
+For a complete list of supported network operating systems for   
+Intel® Ethernet 800 Series Network Adapters visit:  
+intel.com/support/EthernetOSIntel® Ethernet Optics
+Combine high-density Ethernet connections with Intel® Ethernet 
+800 Series Network Adapters for dependable interoperability and  
+consistent performance across the network. Intel Ethernet Optics 
+have been extensively tested for compatibility with Intel Ethernet 
+Network Adapters. Learn more at intel.com/ethernet products
+4No license (express or implied, by estoppel or otherwise) to any intellectual property rights is granted by this document. Intel disclaims all express and implied warranties, including without 
+limitation, the implied warranties of merchantability, fitness for a particular purpose, and non-infringement, as well as any warranty arising from course of performance, course of dealing, 
+or usage in trade. 
+This document contains information on products, services and/or processes in development. All information provided here is subject to 
+change without notice. Contact your Intel representative to obtain the latest forecast, schedule, specifications and roadmaps. 
+The products and services described may contain defects or errors which may cause deviations from published specifications. 
+© Intel Corporation. Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries. 
+Other names and brands may be claimed as the property of others.
+0824/ED/Axiom  641671-016USProduct Information
+For information about Intel® Ethernet Products and technologies 
+visit:  intel.com/ethernetWarranty  
+Intel limited lifetime hardware warranty, 90-day money-back 
+guarantee (US and Canada) and worldwide support.
+Customer Support
+For customer support options in North America visit:  
+intel.com/content/www/us/en/support/contact-support.html
+1. Dynamic Device Personalization (DDP) enables protocol-specific traffic acceleration, to deliver throughput improvement and latency reduction for some cloud workloads
+2. See the  Intel® Ethernet Controller E810 Datasheet  for the full list of product features.
+3. Edge Power Consumption on dual-port adapters, using power class 4 optics drawing the maximum allowed power of 3.5 W each has been shown to exceed the 25 W limit dictated by PCIe CEM  
+specification for products that do not request/configure for high power at the 75 W level. Intel® drivers do not currently support this configuration request. As such the card is not in compliance 
+with the PCI Express Card Electromechanical Specification Revision 4.0, Version 1.0  as written. 
+

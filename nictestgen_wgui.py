@@ -23,18 +23,32 @@ class TestCaseGeneratorApp:
         self.entry = tk.Entry(self.label_frame, width=50)
         self.entry.pack(side=tk.RIGHT)
 
-        self.submit_button = tk.Button(root, text="Submit", command=self.submit)
-        self.submit_button.pack(pady=10)
+        self.submit_button = tk.Button(root, text="Generate TestCases", command=self.submit)
+        self.submit_button.pack(pady=5)
 
-        self.clean_button = tk.Button(root, text="Clean", font=("Helvetica", 8), command=self.clean_output_directory)
+        self.clean_button = tk.Button(root, text="Delete test case documents", font=("Helvetica", 8), command=self.clean_output_directory)
         self.clean_button.pack(pady=10)
         self.clean_button.place(relx=1.0, rely=1.0, anchor='se')
 
         self.progress_label = tk.Label(root, text="")
         self.progress_label.pack(pady=10)
 
-        self.close_button = tk.Button(root, text="Close", command=root.quit)
+        self.close_button = tk.Button(root, text="Close Application", command=root.quit)
         self.close_button.pack(pady=10)
+        self.close_button.place(relx=0.0, rely=1.0, anchor='sw')
+
+        self.model_label = tk.Label(root, text="Select Model:")
+        self.model_label.pack(pady=5)
+
+        self.model_var = tk.StringVar(value=self.MODEL_NAME)
+        self.model_dropdown = tk.OptionMenu(root, self.model_var, "gemini-1.5-flash", "gemini-1.5-flash-8b", "gemini-1.5-pro", command=self.update_selected_model_label)
+        self.model_dropdown.pack(pady=5)
+
+        self.selected_model_label = tk.Label(root, text=f"Selected Model: {self.model_var.get()}")
+        self.selected_model_label.pack(pady=5)
+
+    def update_selected_model_label(self, value):
+        self.selected_model_label.config(text=f"Selected Model: {value}")
 
     def submit(self):
         file_name = self.entry.get()
@@ -69,7 +83,7 @@ class TestCaseGeneratorApp:
 
     def process_file(self, file_name):
         self.configure_api_key(self.API_KEY)
-        model = self.create_generative_model(self.MODEL_NAME)
+        model = self.create_generative_model(self.model_var.get())
         specfeatures, spec_subfeatures = self.get_list_of_features_subfeatures(file_name)
         self.features = list(spec_subfeatures.items())
         self.current_feature_index = 0
@@ -79,7 +93,7 @@ class TestCaseGeneratorApp:
     def process_next_feature(self):
         if self.current_feature_index < len(self.features):
             feature, subfeature_list = self.features[self.current_feature_index]
-            self.progress_label.config(text=f"Generating test cases for feature: {feature}...")
+            self.progress_label.config(text=f"Generating test cases for feature:\n {feature}...")
             self.root.update_idletasks()
             self.root.after(2000, lambda: self.generate_test_cases(feature, subfeature_list))
         else:
